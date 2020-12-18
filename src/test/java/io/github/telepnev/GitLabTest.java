@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class WebDriverTest {
+public class GitLabTest {
     private WebDriver driver;
     @BeforeEach
     public void initDriver() {
@@ -17,8 +17,8 @@ public class WebDriverTest {
     }
 
     @Test
-    public void testGitHub() {
-        driver.get("https://github.com");
+    public void testMainGitLab() {
+        driver.get("https://gitlab.com");
     }
 
     @AfterEach
