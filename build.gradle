@@ -23,5 +23,5 @@ dependencies {
 test {
     useJUnitPlatform()
 
-    systemProperty("browser.name", "chrome")
+    systemProperty("webdriver.browser.name", "CHROME")
 }

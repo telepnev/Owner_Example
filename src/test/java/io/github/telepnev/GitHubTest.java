@@ -1,5 +1,6 @@
 package io.github.telepnev;
 
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,8 +16,11 @@ public class GitHubTest {
 
     @Test
     public void testMainGitHub() {
-        driver.get("https://github.com");
+        final ServiceConfig config = ConfigFactory.newInstance()
+                .create(ServiceConfig.class);
+        driver.get(config.baseUrl());
     }
+
 
     @AfterEach
     public void stopDriver() {

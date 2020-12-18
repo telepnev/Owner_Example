@@ -4,18 +4,23 @@ import org.aeonbits.owner.Config;
 
 import java.net.URL;
 
-
+@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({
+        "classpath:default.properties",
+        "classpath:local.properties"
+        })
 public interface WebDriverConfig extends Config {
-    @DefaultValue("FIREFOX")
+    @DefaultValue("CHROME")
     @Key("webdriver.browser.name")
     BrowserName browserName();
-
-    @DefaultValue("http://localhost:4444/wd/hub")
-    @Key("webdriver.remote.url")
-    URL remoteURL();
 
     @DefaultValue("false")
     @Key("webdriver.remote")
     boolean remote();
+
+    @Key("webdriver.remote.url")
+    URL remoteURL();
+
+
 
 }
